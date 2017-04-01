@@ -39,18 +39,18 @@ namespace Rocket_IP
                 UnturnedPlayer Target = UnturnedPlayer.FromName(command[0]);
                 if (caller is ConsolePlayer)
                 {
-                    Rocket.Core.Logging.Logger.LogWarning("IP of " + Target.DisplayName + ": " + Target.CSteamID.GetIP());
+                    Rocket.Core.Logging.Logger.LogWarning("IP of " + Target.DisplayName + ": " + Target.IP);
                 }
                 else if (caller != null)
                 {
-                    Rocket.Core.Logging.Logger.LogWarning("IP of " + Target.DisplayName + ": " + Target.CSteamID.GetIP());
+                    Rocket.Core.Logging.Logger.LogWarning("IP of " + Target.DisplayName + ": " + Target.IP);
                     if (RocketIP.Instance.Configuration.Instance.DisplayIPToEveryone)
                     {
-                        UnturnedChat.Say(RocketIP.Instance.Translate("result", Target.DisplayName, Target.CSteamID.GetIP()));
+                        UnturnedChat.Say(RocketIP.Instance.Translate("result", Target.DisplayName, Target.IP));
                     }
                     else
                     {
-                        UnturnedChat.Say(caller, RocketIP.Instance.Translate("result", Target.DisplayName, Target.CSteamID.GetIP()));
+                        UnturnedChat.Say(caller, RocketIP.Instance.Translate("result", Target.DisplayName, Target.IP));
                     }
                 }
             }
